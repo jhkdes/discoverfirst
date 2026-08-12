@@ -167,6 +167,7 @@
     }
 
     .email-form button:hover { background: #1d4ed8; }
+    .email-form button:disabled { background: #16a34a; cursor: default; }
 
     .form-note {
       font-size: 12px;
@@ -231,24 +232,42 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 0;
     }
 
-    .challenge-list li {
+    .challenge-item {
       display: flex;
-      gap: 12px;
+      gap: 16px;
       align-items: flex-start;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .challenge-item:first-child {
+      border-top: 1px solid var(--color-border);
+    }
+
+    .challenge-number {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--color-accent-text);
+      background: var(--color-accent-bg);
+      border-radius: var(--radius);
+      padding: 2px 8px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .challenge-content h4 {
       font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .challenge-content p {
+      font-size: 13px;
       color: var(--color-text-secondary);
       line-height: 1.5;
-    }
-
-    .challenge-list li::before {
-      content: "→";
-      color: var(--color-accent);
-      font-weight: 500;
-      flex-shrink: 0;
-      margin-top: 1px;
     }
 
     /* QUOTE */
@@ -309,9 +328,9 @@
   <div class="container">
 
     <nav>
-      <div class="nav-logo">discover<span>first</span>.io</div>
+      <div class="nav-logo">discover<span>first</span>.co</div>
       <div class="nav-links">
-        <a href="#resources">resources</a>
+        <a href="#challenges">challenges</a>
         <a href="#community">community</a>
         <a href="#join" class="btn-outline">join free</a>
       </div>
@@ -319,19 +338,97 @@
 
     <section class="hero">
       <div class="badge">for enterprise B2B product managers</div>
-      <h1>Find the problem<br>before you build.</h1>
+      <h1>Find the customer problem<br>before you build.</h1>
       <p>Tools, frameworks, and a community of PMs doing product discovery the right way — even when the org makes it hard.</p>
 
-      <form class="email-form" id="join" onsubmit="handleSubmit(event)">
-        <input type="email" placeholder="you@company.com" required />
-        <button type="submit">Get early access</button>
-      </form>
+      <div class="email-form" id="join">
+        <input type="email" id="hero-email" placeholder="you@company.com" />
+        <button onclick="openForm('hero-email')">Get early access</button>
+      </div>
       <p class="form-note">Free to join &middot; No spam</p>
     </section>
 
     <hr class="divider" />
 
-    <section id="resources">
+    <section id="challenges">
+      <p class="section-label">challenges we solve</p>
+      <ul class="challenge-list">
+
+        <li class="challenge-item">
+          <span class="challenge-number">01</span>
+          <div class="challenge-content">
+            <h4>Sales and CSMs block customer access</h4>
+            <p>Account teams control customer relationships and won't let you talk directly — protecting deals, avoiding surprises, or simply not seeing research as their problem.</p>
+          </div>
+        </li>
+
+        <li class="challenge-item">
+          <span class="challenge-number">02</span>
+          <div class="challenge-content">
+            <h4>What customers say doesn't match what they do</h4>
+            <p>Enterprise buyers are polite and deferential. Interview data and in-app behavioral data from the same users often tell completely different stories.</p>
+          </div>
+        </li>
+
+        <li class="challenge-item">
+          <span class="challenge-number">03</span>
+          <div class="challenge-content">
+            <h4>Leadership skips discovery and dictates the roadmap</h4>
+            <p>Even when you have the skills, you don't always have permission. Top-down roadmaps, fixed timelines, and command-and-control cultures treat discovery as a luxury.</p>
+          </div>
+        </li>
+
+        <li class="challenge-item">
+          <span class="challenge-number">04</span>
+          <div class="challenge-content">
+            <h4>Insights get shelved before they influence anything</h4>
+            <p>Running interviews is only half the problem. Getting findings to influence what gets built — past leadership skepticism and existing commitments — is the other half.</p>
+          </div>
+        </li>
+
+        <li class="challenge-item">
+          <span class="challenge-number">05</span>
+          <div class="challenge-content">
+            <h4>Too many stakeholders, too few clear problem owners</h4>
+            <p>Enterprise buying groups now average 11+ stakeholders. The person who feels the pain daily is rarely the same as the buyer, the champion, or the decision-maker.</p>
+          </div>
+        </li>
+
+        <li class="challenge-item">
+          <span class="challenge-number">06</span>
+          <div class="challenge-content">
+            <h4>Prototype quality wars with sales</h4>
+            <p>PMs need rough, throwaway prototypes. Sales insists on polished demos. The result: over-engineered prototypes that generate feedback on execution, not the underlying problem.</p>
+          </div>
+        </li>
+
+        <li class="challenge-item">
+          <span class="challenge-number">07</span>
+          <div class="challenge-content">
+            <h4>Invisible problems and slow feedback cycles</h4>
+            <p>Enterprise users normalize workarounds and rarely articulate root causes. With 6–18 month sales cycles, feedback loops are slow and validation arrives long after you needed it.</p>
+          </div>
+        </li>
+
+        <li class="challenge-item">
+          <span class="challenge-number">08</span>
+          <div class="challenge-content">
+            <h4>Early commitments limit future discovery</h4>
+            <p>Architectural, contractual, and roadmap commitments made to early customers quietly reduce your ability to pivot. Discovery gets harder as the product matures.</p>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <hr class="divider" />
+
+    <div class="quote">
+      <p>"The most common blocker I heard across all my client work was: my sales team doesn't want me to talk to a customer."</p>
+      <cite>— Teresa Torres, author of Continuous Discovery Habits</cite>
+    </div>
+
+    <section id="community">
       <p class="section-label">what you get</p>
       <div class="cards">
         <div class="card">
@@ -354,50 +451,43 @@
 
     <hr class="divider" />
 
-    <section class="challenges" id="community">
-      <p class="section-label">why this exists</p>
-      <ul class="challenge-list">
-        <li>Sales and CSMs block you from talking to customers directly</li>
-        <li>What customers say in interviews doesn't match how they actually behave</li>
-        <li>Leadership skips discovery and asks you to just build what they say</li>
-        <li>Your insights get shelved before they influence what gets built</li>
-        <li>Buying committees have grown to 11+ stakeholders — finding the right person is hard</li>
-      </ul>
-    </section>
-
-    <div class="quote">
-      <p>"The most common blocker I heard across all my client work was: my sales team doesn't want me to talk to a customer."</p>
-      <cite>— Teresa Torres, author of Continuous Discovery Habits</cite>
-    </div>
-
-    <hr class="divider" />
-
     <section style="margin-bottom: 3rem;">
       <p class="section-label">join the waitlist</p>
       <p style="font-size: 15px; color: var(--color-text-secondary); margin-bottom: 1.5rem;">We're building this in the open. Early members get free access to everything and a say in what we build first.</p>
-      <form class="email-form" onsubmit="handleSubmit(event)">
-        <input type="email" placeholder="you@company.com" required />
-        <button type="submit">Join the waitlist</button>
-      </form>
+      <div class="email-form">
+        <input type="email" id="footer-email" placeholder="you@company.com" />
+        <button onclick="openForm('footer-email')">Join the waitlist</button>
+      </div>
       <p class="form-note">Free to join &middot; No spam</p>
     </section>
 
     <footer>
-      <p>&copy; 2026 discoverfirst.io</p>
-      <a href="mailto:hello@discoverfirst.io">hello@discoverfirst.io</a>
+      <p>&copy; 2026 discoverfirst.co</p>
+      <a href="mailto:hello@discoverfirst.co">hello@discoverfirst.co</a>
     </footer>
 
   </div>
 
   <script>
-    function handleSubmit(e) {
-      e.preventDefault();
-      const input = e.target.querySelector('input[type="email"]');
-      const btn = e.target.querySelector('button');
-      btn.textContent = 'You\'re on the list!';
+    var GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdq9QbiXraQ2cZqICSUYqOqBwwYv8otNwiYx3c5WMY_-EWIXQ/viewform';
+
+    function openForm(inputId) {
+      var input = document.getElementById(inputId);
+      var btn = input.nextElementSibling;
+      var email = input.value.trim();
+
+      if (!email || !email.includes('@')) {
+        input.focus();
+        input.style.borderColor = '#dc2626';
+        setTimeout(function() { input.style.borderColor = ''; }, 2000);
+        return;
+      }
+
+      window.open(GOOGLE_FORM_URL, '_blank');
+      btn.textContent = "Check the new tab!";
       btn.style.background = '#16a34a';
-      input.disabled = true;
       btn.disabled = true;
+      input.disabled = true;
     }
   </script>
 
