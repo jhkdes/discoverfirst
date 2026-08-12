@@ -469,7 +469,8 @@
   </div>
 
   <script>
-    var GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdq9QbiXraQ2cZqICSUYqOqBwwYv8otNwiYx3c5WMY_-EWIXQ/viewform';
+    var GOOGLE_FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSdq9QbiXraQ2cZqICSUYqOqBwwYv8otNwiYx3c5WMY_-EWIXQ/viewform';
+    var ENTRY_ID = 'entry.2034024023';
 
     function openForm(inputId) {
       var input = document.getElementById(inputId);
@@ -483,7 +484,8 @@
         return;
       }
 
-      window.open(GOOGLE_FORM_URL, '_blank');
+      var url = GOOGLE_FORM_BASE + '?usp=pp_url&' + ENTRY_ID + '=' + encodeURIComponent(email);
+      window.open(url, '_blank');
       btn.textContent = "Check the new tab!";
       btn.style.background = '#16a34a';
       btn.disabled = true;
