@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tools, frameworks, and a community of PMs doing product discovery the right way — even when the org makes it hard." />
+  <title>Discover First — Enterprise B2B Product Discovery</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-bg: #ffffff;
+      --color-surface: #f7f7f5;
+      --color-border: #e5e5e2;
+      --color-text-primary: #1a1a18;
+      --color-text-secondary: #5f5e5a;
+      --color-text-muted: #9b9a96;
+      --color-accent: #2563eb;
+      --color-accent-bg: #eff6ff;
+      --color-accent-text: #1d4ed8;
+      --radius: 8px;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--color-text-primary);
+      background: var(--color-bg);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-logo {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .nav-logo span {
+      color: var(--color-accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--color-text-primary); }
+
+    .nav-links .btn-outline {
+      color: var(--color-text-primary);
+      border: 1px solid var(--color-border);
+      padding: 6px 14px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .nav-links .btn-outline:hover {
+      border-color: var(--color-text-secondary);
+      background: var(--color-surface);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 4rem 0 3rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--color-accent-bg);
+      color: var(--color-accent-text);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: var(--radius);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--color-text-secondary);
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+
+    /* EMAIL FORM */
+    .email-form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .email-form input[type="email"] {
+      flex: 1;
+      min-width: 220px;
+      height: 42px;
+      padding: 0 14px;
+      font-size: 14px;
+      font-family: inherit;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      outline: none;
+      color: var(--color-text-primary);
+      background: var(--color-bg);
+      transition: border-color 0.15s;
+    }
+
+    .email-form input[type="email"]::placeholder {
+      color: var(--color-text-muted);
+    }
+
+    .email-form input[type="email"]:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .email-form button {
+      height: 42px;
+      padding: 0 20px;
+      font-size: 14px;
+      font-family: inherit;
+      font-weight: 500;
+      color: #ffffff;
+      background: var(--color-accent);
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+
+    .email-form button:hover { background: #1d4ed8; }
+
+    .form-note {
+      font-size: 12px;
+      color: var(--color-text-muted);
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--color-border);
+      margin: 2.5rem 0;
+    }
+
+    /* SECTION LABEL */
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.25rem;
+    }
+
+    /* FEATURE CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .card-icon {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+
+    /* CHALLENGES SECTION */
+    .challenges {
+      margin-bottom: 2.5rem;
+    }
+
+    .challenge-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .challenge-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+
+    .challenge-list li::before {
+      content: "→";
+      color: var(--color-accent);
+      font-weight: 500;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* QUOTE */
+    .quote {
+      background: var(--color-surface);
+      border-left: 3px solid var(--color-accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .quote p {
+      font-size: 15px;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .quote cite {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      font-style: normal;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--color-border);
+      padding: 1.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+
+    footer a {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+    }
+
+    footer a:hover { color: var(--color-text-primary); }
+
+    /* RESPONSIVE */
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 30px; }
+      .nav-links a:not(.btn-outline) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <nav>
+      <div class="nav-logo">discover<span>first</span>.io</div>
+      <div class="nav-links">
+        <a href="#resources">resources</a>
+        <a href="#community">community</a>
+        <a href="#join" class="btn-outline">join free</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="badge">for enterprise B2B product managers</div>
+      <h1>Find the problem<br>before you build.</h1>
+      <p>Tools, frameworks, and a community of PMs doing product discovery the right way — even when the org makes it hard.</p>
+
+      <form class="email-form" id="join" onsubmit="handleSubmit(event)">
+        <input type="email" placeholder="you@company.com" required />
+        <button type="submit">Get early access</button>
+      </form>
+      <p class="form-note">Free to join &middot; No spam</p>
+    </section>
+
+    <hr class="divider" />
+
+    <section id="resources">
+      <p class="section-label">what you get</p>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">🔍</div>
+          <h3>Community</h3>
+          <p>PMs navigating the same discovery walls you are — share tactics, swap war stories.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🛠</div>
+          <h3>Tools</h3>
+          <p>Templates and frameworks built specifically for enterprise B2B discovery constraints.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📖</div>
+          <h3>Guides</h3>
+          <p>Real tactics for getting past sales gatekeepers and finding the right customer to talk to.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="challenges" id="community">
+      <p class="section-label">why this exists</p>
+      <ul class="challenge-list">
+        <li>Sales and CSMs block you from talking to customers directly</li>
+        <li>What customers say in interviews doesn't match how they actually behave</li>
+        <li>Leadership skips discovery and asks you to just build what they say</li>
+        <li>Your insights get shelved before they influence what gets built</li>
+        <li>Buying committees have grown to 11+ stakeholders — finding the right person is hard</li>
+      </ul>
+    </section>
+
+    <div class="quote">
+      <p>"The most common blocker I heard across all my client work was: my sales team doesn't want me to talk to a customer."</p>
+      <cite>— Teresa Torres, author of Continuous Discovery Habits</cite>
+    </div>
+
+    <hr class="divider" />
+
+    <section style="margin-bottom: 3rem;">
+      <p class="section-label">join the waitlist</p>
+      <p style="font-size: 15px; color: var(--color-text-secondary); margin-bottom: 1.5rem;">We're building this in the open. Early members get free access to everything and a say in what we build first.</p>
+      <form class="email-form" onsubmit="handleSubmit(event)">
+        <input type="email" placeholder="you@company.com" required />
+        <button type="submit">Join the waitlist</button>
+      </form>
+      <p class="form-note">Free to join &middot; No spam</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 discoverfirst.io</p>
+      <a href="mailto:hello@discoverfirst.io">hello@discoverfirst.io</a>
+    </footer>
+
+  </div>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const input = e.target.querySelector('input[type="email"]');
+      const btn = e.target.querySelector('button');
+      btn.textContent = 'You\'re on the list!';
+      btn.style.background = '#16a34a';
+      input.disabled = true;
+      btn.disabled = true;
+    }
+  </script>
+
+</body>
+</html>
