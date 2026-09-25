@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tools, frameworks, and a community of PMs doing product discovery the right way — even when the org makes it hard." />
-  <title>Discover First — Enterprise B2B Product Discovery</title>
+  <meta name="description" content="Why Discover First exists: lowering the cost of problem discovery so more customer-ready products get built." />
+  <title>About — Discover First</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -321,6 +321,15 @@
       .hero h1 { font-size: 30px; }
       .nav-links a:not(.btn-outline) { display: none; }
     }
+
+    /* ABOUT PAGE */
+    .nav-logo a { color: inherit; }
+    .nav-links a.active { color: var(--color-text-primary); }
+    .prose { margin-bottom: 2.5rem; }
+    .prose p:not(.section-label) { font-size: 16px; color: var(--color-text-secondary); margin-bottom: 1.1rem; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose strong { color: var(--color-text-primary); font-weight: 500; }
+    .mission p { font-size: 17px; font-style: normal; color: var(--color-text-primary); }
   </style>
 </head>
 <body>
@@ -328,136 +337,88 @@
   <div class="container">
 
     <nav>
-      <div class="nav-logo">discover<span>first</span>.co</div>
+      <div class="nav-logo"><a href="/">discover<span>first</span>.co</a></div>
       <div class="nav-links">
-        <a href="#challenges">challenges</a>
-        <a href="#community">community</a>
-        <a href="/about">about</a>
+        <a href="/#challenges">challenges</a>
+        <a href="/about" class="active">about</a>
         <a href="#join" class="btn-outline">join free</a>
       </div>
     </nav>
 
     <section class="hero">
-      <div class="badge">for enterprise B2B product managers</div>
-      <h1>Find the customer problem<br>before you build.</h1>
-      <p>Tools, frameworks, and a community of PMs doing product discovery the right way — even when the org makes it hard.</p>
+      <div class="badge">about discover first</div>
+      <h1>Product discovery<br>shouldn't be this expensive.</h1>
+      <p>PMs are told to talk to customers. Almost nothing in an enterprise B2B org is set up to let them. I'm building Discover First to change that.</p>
+    </section>
 
-      <div class="email-form" id="join">
-        <input type="email" id="hero-email" placeholder="you@company.com" />
-        <button onclick="openForm('hero-email')">Get early access</button>
-      </div>
-      <p class="form-note">Free to join &middot; No spam</p>
+    <div class="quote mission">
+      <p>Discover First's mission is to lower the cost of problem discovery, so more customer-ready products get built.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <section class="prose">
+      <p class="section-label">why i started this</p>
+      <p>I've spent 25+ years building and shipping enterprise products in regulated B2B industries. Over that time, one pattern kept repeating: <strong>product managers are told to talk to customers, and they know they need to, but they aren't set up to do it.</strong></p>
+      <p>Customer relationships belong to account managers and customer success. To get on a call, a PM has to ask permission, because nobody wants a product conversation to get in the way of a deal or a renewal. Sellers are chasing quota and delivering what's already been promised. A PM showing up with new ideas looks like a risk, not a help.</p>
+      <p>Even when permission comes through, the hard part isn't over. A discovery call is a low priority for the customer. It gets squeezed between time zones and pushed back again and again. And it's often run by a PM who was never taught how to do discovery well.</p>
+      <p>At first I thought this was specific to the companies I worked at. It isn't. The more I looked, the clearer it became that this is how enterprise B2B works almost everywhere. That's why Discover First exists.</p>
+    </section>
+
+    <section class="prose">
+      <p class="section-label">it's not just PMs</p>
+      <p>Founders and builders run into the same gap from the other side. It's easy to start with the solution, especially one built on exciting new technology, and assume it must be useful because of what it can do.</p>
+      <p>The step that gets skipped is finding the customers who actually have the problem and inviting them in as design partners <em>while</em> you build.</p>
+    </section>
+
+    <section class="prose">
+      <p class="section-label">why enterprise b2b</p>
+      <p>In B2C, a dozen paying customers isn't a business. In enterprise B2B, it often is.</p>
+      <p>That changes what discovery is for. It isn't only about finding problems. It's about <strong>building relationships with the people who told you about them</strong>, so the customers who helped you understand the problem become your first beta customers, and then your first paying ones.</p>
     </section>
 
     <hr class="divider" />
 
-    <section id="challenges">
-      <p class="section-label">challenges we solve</p>
+    <section class="challenges">
+      <p class="section-label">what i believe</p>
       <ul class="challenge-list">
-
         <li class="challenge-item">
           <span class="challenge-number">01</span>
           <div class="challenge-content">
-            <h4>Sales and CSMs block customer access</h4>
-            <p>Account teams control customer relationships and won't let you talk directly — protecting deals, avoiding surprises, or simply not seeing research as their problem.</p>
+            <h4>Start with the problem, not the technology</h4>
+            <p>New technology doesn't make a product useful. Solving a problem customers actually have does.</p>
           </div>
         </li>
-
         <li class="challenge-item">
           <span class="challenge-number">02</span>
           <div class="challenge-content">
-            <h4>What customers say doesn't match what they do</h4>
-            <p>Enterprise buyers are polite and deferential. Interview data and in-app behavioral data from the same users often tell completely different stories.</p>
+            <h4>Discovery is a relationship, not a research project</h4>
+            <p>The people who report a problem can become design partners, then beta customers, then paying customers.</p>
           </div>
         </li>
-
         <li class="challenge-item">
           <span class="challenge-number">03</span>
           <div class="challenge-content">
-            <h4>Leadership skips discovery and dictates the roadmap</h4>
-            <p>Even when you have the skills, you don't always have permission. Top-down roadmaps, fixed timelines, and command-and-control cultures treat discovery as a luxury.</p>
+            <h4>PMs need a system, not just permission</h4>
+            <p>Time, channels to customers, and hands-on experience have to come together, or "go talk to customers" stays advice nobody can act on.</p>
           </div>
         </li>
-
-        <li class="challenge-item">
-          <span class="challenge-number">04</span>
-          <div class="challenge-content">
-            <h4>Insights get shelved before they influence anything</h4>
-            <p>Running interviews is only half the problem. Getting findings to influence what gets built — past leadership skepticism and existing commitments — is the other half.</p>
-          </div>
-        </li>
-
-        <li class="challenge-item">
-          <span class="challenge-number">05</span>
-          <div class="challenge-content">
-            <h4>Too many stakeholders, too few clear problem owners</h4>
-            <p>Enterprise buying groups now average 11+ stakeholders. The person who feels the pain daily is rarely the same as the buyer, the champion, or the decision-maker.</p>
-          </div>
-        </li>
-
-        <li class="challenge-item">
-          <span class="challenge-number">06</span>
-          <div class="challenge-content">
-            <h4>Prototype quality wars with sales</h4>
-            <p>PMs need rough, throwaway prototypes. Sales insists on polished demos. The result: over-engineered prototypes that generate feedback on execution, not the underlying problem.</p>
-          </div>
-        </li>
-
-        <li class="challenge-item">
-          <span class="challenge-number">07</span>
-          <div class="challenge-content">
-            <h4>Invisible problems and slow feedback cycles</h4>
-            <p>Enterprise users normalize workarounds and rarely articulate root causes. With 6–18 month sales cycles, feedback loops are slow and validation arrives long after you needed it.</p>
-          </div>
-        </li>
-
-        <li class="challenge-item">
-          <span class="challenge-number">08</span>
-          <div class="challenge-content">
-            <h4>Early commitments limit future discovery</h4>
-            <p>Architectural, contractual, and roadmap commitments made to early customers quietly reduce your ability to pivot. Discovery gets harder as the product matures.</p>
-          </div>
-        </li>
-
       </ul>
     </section>
 
-    <hr class="divider" />
-
-    <div class="quote">
-      <p>"The most common blocker I heard across all my client work was: my sales team doesn't want me to talk to a customer."</p>
-      <cite>— Teresa Torres, author of Continuous Discovery Habits</cite>
-    </div>
-
-    <section id="community">
-      <p class="section-label">what you get</p>
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">🔍</div>
-          <h3>Community</h3>
-          <p>PMs navigating the same discovery walls you are — share tactics, swap war stories.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🛠</div>
-          <h3>Tools</h3>
-          <p>Templates and frameworks built specifically for enterprise B2B discovery constraints.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📖</div>
-          <h3>Guides</h3>
-          <p>Real tactics for getting past sales gatekeepers and finding the right customer to talk to.</p>
-        </div>
-      </div>
+    <section class="prose">
+      <p class="section-label">who's behind this</p>
+      <p>Discover First is one veteran product manager (me) working alongside AI models, Claude and ChatGPT, to research, write, and build faster than I could alone. It fits the mission: if AI can lower the cost of building, discovery should get cheaper too.</p>
     </section>
 
     <hr class="divider" />
 
-    <section style="margin-bottom: 3rem;">
+    <section style="margin-bottom: 3rem;" id="join">
       <p class="section-label">join the waitlist</p>
-      <p style="font-size: 15px; color: var(--color-text-secondary); margin-bottom: 1.5rem;">We're building this in the open. Early members get free access to everything and a say in what we build first.</p>
+      <p style="font-size: 15px; color: var(--color-text-secondary); margin-bottom: 1.5rem;">I'm building this in the open. Early members get free access to everything and a say in what gets built first.</p>
       <div class="email-form">
-        <input type="email" id="footer-email" placeholder="you@company.com" />
-        <button onclick="openForm('footer-email')">Join the waitlist</button>
+        <input type="email" id="about-email" placeholder="you@company.com" />
+        <button onclick="openForm('about-email')">Join the waitlist</button>
       </div>
       <p class="form-note">Free to join &middot; No spam</p>
     </section>
