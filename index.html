@@ -8,21 +8,24 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --color-bg: #ffffff;
-      --color-surface: #f7f7f5;
-      --color-border: #e5e5e2;
-      --color-text-primary: #1a1a18;
-      --color-text-secondary: #5f5e5a;
-      --color-text-muted: #9b9a96;
-      --color-accent: #2563eb;
-      --color-accent-bg: #eff6ff;
-      --color-accent-text: #1d4ed8;
+      --color-surface: #f8f9fa;
+      --color-border: #e2e8f0;
+      --color-text-primary: #0f172a;
+      --color-text-secondary: #475569;
+      --color-text-muted: #64748b;
+      --color-navy: #0f172a;
+      --color-navy-2: #1e293b;
+      --color-accent: #0d9488;
+      --color-accent-hover: #0f766e;
+      --color-accent-bg: #e2e8f0;
+      --color-accent-text: #1e293b;
       --radius: 8px;
     }
 
@@ -43,21 +46,23 @@
     }
 
     /* NAV */
-    nav {
+    .site-nav { background: var(--color-navy); }
+    .site-nav .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--color-border);
+      padding-top: 1.1rem;
+      padding-bottom: 1.1rem;
     }
 
     .nav-logo {
       font-size: 16px;
       font-weight: 500;
+      color: #ffffff;
     }
 
     .nav-logo span {
-      color: var(--color-accent);
+      color: #5eead4;
     }
 
     .nav-links {
@@ -68,15 +73,15 @@
 
     .nav-links a {
       font-size: 14px;
-      color: var(--color-text-secondary);
+      color: #cbd5e1;
       transition: color 0.15s;
     }
 
-    .nav-links a:hover { color: var(--color-text-primary); }
+    .nav-links a:hover { color: #ffffff; }
 
     .nav-links .btn-outline {
-      color: var(--color-text-primary);
-      border: 1px solid var(--color-border);
+      color: #ffffff;
+      border: 1px solid #475569;
       padding: 6px 14px;
       border-radius: var(--radius);
       font-size: 14px;
@@ -84,8 +89,8 @@
     }
 
     .nav-links .btn-outline:hover {
-      border-color: var(--color-text-secondary);
-      background: var(--color-surface);
+      border-color: #cbd5e1;
+      background: var(--color-navy-2);
     }
 
     /* HERO */
@@ -147,16 +152,16 @@
     }
 
     .email-form input[type="email"]:focus {
-      border-color: var(--color-accent);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      border-color: var(--color-navy-2);
+      box-shadow: 0 0 0 3px rgba(30, 41, 59, 0.15);
     }
 
     .email-form button {
       height: 42px;
       padding: 0 20px;
-      font-size: 14px;
+      font-size: 16px;
       font-family: inherit;
-      font-weight: 500;
+      font-weight: 600;
       color: #ffffff;
       background: var(--color-accent);
       border: none;
@@ -166,8 +171,8 @@
       transition: background 0.15s;
     }
 
-    .email-form button:hover { background: #1d4ed8; }
-    .email-form button:disabled { background: #16a34a; cursor: default; }
+    .email-form button:hover { background: var(--color-accent-hover); }
+    .email-form button:disabled { background: var(--color-accent-hover); cursor: default; }
 
     .form-note {
       font-size: 12px;
@@ -273,7 +278,7 @@
     /* QUOTE */
     .quote {
       background: var(--color-surface);
-      border-left: 3px solid var(--color-accent);
+      border-left: 3px solid var(--color-navy-2);
       border-radius: 0 var(--radius) var(--radius) 0;
       padding: 1.25rem 1.5rem;
       margin-bottom: 2.5rem;
@@ -295,8 +300,11 @@
 
     /* FOOTER */
     footer {
-      border-top: 1px solid var(--color-border);
-      padding: 1.5rem 0;
+      background: var(--color-navy);
+      padding: 1.75rem 0;
+    }
+
+    .footer-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -306,15 +314,15 @@
 
     footer p {
       font-size: 13px;
-      color: var(--color-text-muted);
+      color: #94a3b8;
     }
 
     footer a {
       font-size: 13px;
-      color: var(--color-text-secondary);
+      color: #cbd5e1;
     }
 
-    footer a:hover { color: var(--color-text-primary); }
+    footer a:hover { color: #ffffff; }
 
     /* RESPONSIVE */
     @media (max-width: 480px) {
@@ -325,9 +333,8 @@
 </head>
 <body>
 
-  <div class="container">
-
-    <nav>
+  <header class="site-nav">
+    <div class="container">
       <div class="nav-logo">discover<span>first</span>.co</div>
       <div class="nav-links">
         <a href="#challenges">challenges</a>
@@ -335,7 +342,10 @@
         <a href="/about">about</a>
         <a href="#join" class="btn-outline">join free</a>
       </div>
-    </nav>
+    </div>
+  </header>
+
+  <div class="container">
 
     <section class="hero">
       <div class="badge">for enterprise B2B product managers</div>
@@ -462,12 +472,14 @@
       <p class="form-note">Free to join &middot; No spam</p>
     </section>
 
-    <footer>
+    </div>
+
+  <footer>
+    <div class="container footer-inner">
       <p>&copy; 2026 discoverfirst.co</p>
       <a href="mailto:hello@discoverfirst.co">hello@discoverfirst.co</a>
-    </footer>
-
-  </div>
+    </div>
+  </footer>
 
   <script>
     var GOOGLE_FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSdq9QbiXraQ2cZqICSUYqOqBwwYv8otNwiYx3c5WMY_-EWIXQ/viewform';
@@ -488,7 +500,7 @@
       var url = GOOGLE_FORM_BASE + '?usp=pp_url&' + ENTRY_ID + '=' + encodeURIComponent(email);
       window.open(url, '_blank');
       btn.textContent = "Check the new tab!";
-      btn.style.background = '#16a34a';
+      btn.style.background = '#0f766e';
       btn.disabled = true;
       input.disabled = true;
     }
