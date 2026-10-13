@@ -1,6 +1,6 @@
 // ---- CONFIG: fill these in ----
 var INTERVIEW_URL = 'https://user-interviewer.vercel.app/interview/oRRmE13e6egBgsSsQmHuJJvL96ElRAdb';        // the voice AI interview link (collects email at interview time)
-var COUNT_API_URL = 'https://user-interviewer-git-preview-df-dc33.vercel.app/api/public/completed-interviews-count'; // returns {completedInterviews: n}
+var COUNT_API_URL = 'https://user-interviewer.vercel.app/api/public/completed-interviews-count'; // returns {completedInterviews: n}
 var GOAL = 200;
 var EARLY_THRESHOLD = 100;       // below this (or if the API is unset or fails), show the "first 100" message instead of the number
 // --------------------------------
