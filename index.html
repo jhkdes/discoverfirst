@@ -315,6 +315,57 @@
       font-style: normal;
     }
 
+    /* STUDY CARD */
+    .study-card {
+      display: block;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 0.5rem;
+      transition: border-color 0.15s;
+    }
+
+    .study-card:hover { border-color: var(--color-line-strong); }
+    .study-card:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+    .study-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .study-title {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--color-text-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .study-body {
+      display: block;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.9rem;
+    }
+
+    .study-cta {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-accent);
+      border-bottom: 2px solid var(--color-accent);
+    }
+
     /* FOOTER */
     footer {
       background: var(--color-bg);
@@ -343,7 +394,7 @@
     footer a:hover { color: var(--color-text-primary); }
 
     /* RESPONSIVE */
-    @media (max-width: 480px) {
+    @media (max-width: 640px) {
       .hero h1 { font-size: 30px; line-height: 34px; }
       .nav-links a:not(.btn-outline) { display: none; }
     }
@@ -357,6 +408,7 @@
       <div class="nav-links">
         <a href="#challenges">challenges</a>
         <a href="#community">community</a>
+        <a href="/ai-study">research</a>
         <a href="/about">about</a>
         <a href="#join" class="btn-outline">join free</a>
       </div>
@@ -376,6 +428,13 @@
       </div>
       <p class="form-note">Free to join &middot; No spam</p>
     </section>
+
+    <a class="study-card" href="/ai-study">
+      <span class="study-label">New study &middot; 32 product managers</span>
+      <span class="study-title">From usage to judgment: how AI is reshaping the PM's job</span>
+      <span class="study-body">28 of 32 PMs use AI several times a day. What separates them is how much context they give it, how hard they check it, and whether their company helps.</span>
+      <span class="study-cta">Get the report &rarr;</span>
+    </a>
 
     <hr class="divider" />
 
