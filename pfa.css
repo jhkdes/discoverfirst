@@ -1,0 +1,48 @@
+/* Personal Feedback Agent landing page. Builds on the brand tokens in jobseekers.css. */
+
+.hero h1 { font-size: 44px; line-height: 48px; margin-bottom: 1.25rem; }
+.hero .lede { max-width: 540px; }
+.hero-note { font-size: 14px; }
+.text-link-quiet { color: var(--indigo); border-bottom: 1px solid var(--indigo); }
+.text-link-quiet:hover { filter: brightness(1.15); }
+
+/* EXAMPLE CARD (illustration with a fictional colleague) */
+.example-card { background: var(--paper-raised); border: 1px solid var(--grid-line); border-radius: var(--radius-lg); padding: 1.75rem; }
+.example-tag { font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--coral-text); margin-bottom: .75rem; }
+.example-kicker { font-family: var(--font-display); font-size: 20px; line-height: 28px; font-weight: 600; color: var(--ink); }
+.example-card blockquote { margin: .75rem 0 1rem; font-size: 17px; line-height: 26px; color: var(--ink); }
+.why { background: var(--paper-sunken); border-radius: var(--radius-md); padding: .85rem 1rem; }
+.why p { font-size: 15px; line-height: 22px; color: var(--ink); }
+.why .why-label { font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--indigo); margin-bottom: .25rem; }
+.audio { display: flex; align-items: center; gap: .9rem; margin-top: 1.1rem; }
+.wave { display: flex; align-items: center; gap: 3px; height: 32px; flex: 1; min-width: 0; }
+.wave i { display: block; width: 3px; border-radius: 2px; background: var(--indigo); height: var(--h); flex: none; }
+.audio-text { font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; color: var(--ink-muted); white-space: nowrap; }
+
+/* SECTIONS */
+.block > .container > h2 { max-width: 760px; }
+.problems { margin-top: 2rem; }
+.steps-4 { grid-template-columns: repeat(4, 1fr); margin-top: 2rem; }
+.pieces { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.piece { background: var(--paper-raised); border: 1px solid var(--grid-line); border-radius: var(--radius-lg); padding: 1.5rem; }
+.piece-no { font-family: var(--font-mono); font-size: 13px; font-weight: 500; color: var(--indigo); margin-bottom: .75rem; }
+.piece h3 { font-size: 18px; line-height: 26px; font-weight: 600; color: var(--ink); margin-bottom: .35rem; }
+.piece p:last-child { font-size: 15px; color: var(--ink-muted); }
+.recording-note { margin-top: 1.5rem; max-width: 760px; font-size: 16px; color: var(--ink-muted); }
+
+.final .beta-feedback { margin-top: 1.75rem; font-size: 15px; color: var(--ink-muted); }
+
+@media (max-width: 1000px) {
+  .steps-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 860px) {
+  .pieces { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 40px; line-height: 44px; }
+}
+@media (max-width: 560px) {
+  .steps-4 { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 32px; line-height: 36px; }
+  .hero .btn-primary { width: 100%; }
+  .audio { flex-wrap: wrap; }
+  .wave { flex-basis: 100%; }
+}
