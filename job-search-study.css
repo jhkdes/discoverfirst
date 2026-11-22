@@ -1,0 +1,49 @@
+/* Job search challenges study landing page. Builds on the brand tokens in jobseekers.css. */
+
+.hero h1 { font-size: 44px; line-height: 48px; margin-bottom: 1.25rem; }
+.hero .lede { max-width: 540px; }
+.hero-note { font-size: 14px; }
+.text-link-quiet { color: var(--indigo); border-bottom: 1px solid var(--indigo); }
+.text-link-quiet:hover { filter: brightness(1.15); }
+
+/* HERO: how the interview starts */
+.question-card { background: var(--paper-raised); border: 1px solid var(--grid-line); border-radius: var(--radius-lg); padding: 1.75rem; }
+.question-tag { font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--coral-text); margin-bottom: .75rem; }
+.question-card blockquote { margin: 0 0 1rem; font-family: var(--font-display); font-size: 21px; line-height: 30px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+.question-note { font-size: 14px; line-height: 22px; color: var(--ink-muted); }
+
+/* SECTIONS */
+.block > .container > h2 { max-width: 760px; }
+.groups { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
+.group { background: var(--paper-raised); border: 1px solid var(--grid-line); border-radius: var(--radius-lg); padding: 1.5rem; }
+.group h3 { font-size: 20px; line-height: 28px; font-weight: 600; color: var(--ink); margin-bottom: .35rem; }
+.group p { font-size: 16px; color: var(--ink-muted); }
+.groups-label { font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-muted); }
+.gets-item p.gets-tag { font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--indigo); margin-bottom: .6rem; }
+
+.areas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.area { background: var(--paper-raised); border: 1px solid var(--grid-line); border-radius: var(--radius-lg); padding: 1.5rem; }
+.area-no { font-family: var(--font-mono); font-size: 13px; font-weight: 500; color: var(--indigo); margin-bottom: .75rem; }
+.area h3 { font-size: 18px; line-height: 26px; font-weight: 600; color: var(--ink); margin-bottom: .35rem; }
+.area p:last-child { font-size: 15px; color: var(--ink-muted); }
+
+.steps-4 { grid-template-columns: repeat(4, 1fr); margin-top: 2rem; }
+
+.final .study-contact { margin-top: 1.75rem; font-size: 15px; color: var(--ink-muted); }
+
+@media (max-width: 1000px) {
+  .steps-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 860px) {
+  .groups, .areas { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 40px; line-height: 44px; }
+}
+@media (max-width: 560px) {
+  .steps-4 { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 32px; line-height: 36px; }
+  .question-card blockquote { font-size: 19px; line-height: 27px; }
+}
+
+.groups-label + .groups { margin-top: .75rem; }
+
+.hero-note + .hero-note { margin-top: .25rem; }
