@@ -46,3 +46,16 @@
   .audio { flex-wrap: wrap; }
   .wave { flex-basis: 100%; }
 }
+
+/* DEMO VIDEOS */
+.demos { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+.demo { margin: 0; }
+.demo video { display: block; width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--grid-line); border-radius: var(--radius-lg); background: #0f1626; }
+.demo figcaption { margin-top: 1rem; }
+.demo-tag { display: block; font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: .35rem; }
+.demo h3 { font-size: 20px; line-height: 28px; font-weight: 600; color: var(--ink); margin-bottom: .3rem; }
+.demo p { font-size: 15px; line-height: 23px; color: var(--ink-muted); }
+
+@media (max-width: 860px) {
+  .demos { grid-template-columns: 1fr; gap: 2rem; }
+}
